@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>Add new product</title>
+    </head>
+    
+    <body>
+        <h1>
+            Add new Product
+        </h1>
+        
+        <a href="index.html"><p>Home</p></a>
+        
+        <form>
+            <label for="name">
+                Name:
+                <input type="text" name="name" maxlength="12" required>
+            </label><br>
+            <label for="price">
+                Price:
+                <input type="number" name="price" pattern="^[0-9]{1,5}(?:\.[0-9]{0,2})?$" step="0.01" required max="100000" >
+            </label><br>
+            <label for="description">
+                Enter Description:
+                <textarea name="description" required></textarea>
+            </label><br>
+            <label for="category">
+                Category
+                <input type="text" name="category" required maxlength="12">
+            </label><br>
+            
+            <label for="image">
+                Upload Product Image:
+                <input type="file" name="image" accept="image/*"  id="pic" required>
+            </label><br>
+            <label for="color">
+                Select Color:
+                <input type="color" name="color" required maxlength="12">
+            </label><br>
+            
+            <button type="submit">Done</button>
+        </form> <br>
+         
+        <div class="message"></div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src="scripts/add.js"></script>
+    </body>
+</html>
