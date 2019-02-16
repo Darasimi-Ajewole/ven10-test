@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o5y!regnl)ee9jc(sjb3=a@66ej*&^=5z8=)+k%!i!rwy)bp5)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True;
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+"127.0.0.1"
+]
 
 
 # Application definition
@@ -58,7 +60,8 @@ ROOT_URLCONF = 'ven10.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates"),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,9 +124,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = "/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR,"files")
+STATIC_ROOT = os.path.join(BASE_DIR,"static",)
+
+MEDIA_URL = "/media/"
+
+#MEDIA_ROOT = os.path.join(BASE_DIR,"static","images")
 
 CORS_ORIGIN_ALLOW_ALL = True
 
