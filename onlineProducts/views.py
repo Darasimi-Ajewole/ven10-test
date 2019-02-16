@@ -1,10 +1,19 @@
+from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view 
 from rest_framework.response import Response
 from .models import Product  
 from .serializers import ProdSerializer, DetailSerializer 
-from .models import Product
+from django.conf import settings
+from os.path import join
 
+def add(request):
+	return render(request,"add.html")
+
+def detail(request):
+	return render(request, "detail.html")
+	
+	
 #Product List API
 @api_view(['GET'])
 def product_list(request):
