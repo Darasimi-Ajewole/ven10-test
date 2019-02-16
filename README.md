@@ -1,5 +1,5 @@
 # ven10-store
-A crud online store created using django and vanilla JS at the front end. The back end API include:
+A simple online store created using django and vanilla JS at the front end. The back end API include:
 >* **Product list api** - responds with list of all products.
 >* **Product detail api** - responds with all properties of a product.
 >* **Product create api** - creates a new product.
