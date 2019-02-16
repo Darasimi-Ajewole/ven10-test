@@ -10,7 +10,7 @@ A simple online store created using django and vanilla JS at the front end. The 
 3. `$ python manage.py runserver`
 4. Kindly wait a few seconds for development server to start successfully.
 5. Connect to the internet.
-6. Open your browser(chrome preferably) and navigate to `file:///<project directory>/front-end/index.html`.
+6. Open your browser(chrome preferably) and navigate to `http://127.0.0.1:8000/add`
 
 # Prerequisites
 1. Follow the instructions [here](https://pillow.readthedocs.io/en/stable/installation.html) to install Pillow dependencies 
@@ -24,3 +24,8 @@ A simple online store created using django and vanilla JS at the front end. The 
 1. `$ cd <project directory>`
 
 2. `$ python manage.py test`
+
+# Built With
+
+* Python 3.7
+* Android 6.3
