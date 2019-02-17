@@ -27,7 +27,6 @@ DEBUG = True;
 
 ALLOWED_HOSTS = [
 "127.0.0.1",
-"vast-plateau-57728.herokuapp.com",
 ]
 
 
