@@ -26,7 +26,8 @@ SECRET_KEY = 'o5y!regnl)ee9jc(sjb3=a@66ej*&^=5z8=)+k%!i!rwy)bp5)'
 DEBUG = True;
 
 ALLOWED_HOSTS = [
-"127.0.0.1"
+"127.0.0.1",
+"https://vast-plateau-57728.herokuapp.com",
 ]
 
 
