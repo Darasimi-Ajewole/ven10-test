@@ -11,6 +11,7 @@ A simple online store created using django and vanilla JS at the front end. The 
 4. Kindly wait a few seconds for development server to start successfully.
 5. Connect to the internet.
 6. Open your browser(chrome preferably) and navigate to `http://127.0.0.1:8000/add`
+7. If you experience any issue,check out the prerequisites
 
 # Prerequisites
 1. Follow the instructions [here](https://pillow.readthedocs.io/en/stable/installation.html) to install Pillow dependencies 
