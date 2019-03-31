@@ -1,1 +1,1 @@
-web: gunicorn ven10.wsgi --log-file -
+web: gunicorn ven10.production-wsgi --log-file -
