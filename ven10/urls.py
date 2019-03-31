@@ -21,12 +21,12 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from onlineProducts import views                      
 
 urlpatterns = [
-    path('add', views.add),
-    path('detail', views.detail),
+    path('', views.home),
     path('admin/', admin.site.urls),
     path('products', views.product_list), #product list api urlpath
     path('products/<int:pk>',views.product_detail), #product detail api url path
     path('products/create',views.create_product), # product create api url path
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns = format_suffix_patterns(urlpatterns)
