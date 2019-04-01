@@ -4,7 +4,7 @@ A simple online store created using django and vanilla JS at the front end. The 
 >* **Product detail api** - responds with all properties of a product.
 >* **Product create api** - creates a new product.
 
-See it live [here](https://vast-plateau-57728.herokuapp.com/add)
+See it live [here](https://vast-plateau-57728.herokuapp.com)
 
 # Getting Started
 1. Clone the repository
