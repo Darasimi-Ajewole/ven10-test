@@ -9,7 +9,7 @@ class Product(models.Model):
     description = models.TextField()
     category =  models.CharField(max_length=12)
     image = models.ImageField(upload_to='')
-    color = models.CharField(max_length=12)
+    color = models.CharField(max_length=40)
 
     def _str_(self): 
         return self.name
