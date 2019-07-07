@@ -66,7 +66,7 @@ function fileUpdate(event) {
 $.fn.form.settings.rules.imageSize = function(value) {
     if (fileInput[0].files.length) {
         var size = fileInput[0].files[0].size
-        return size <= 2000;
+        return size <= 20000;
     }
     return false;
 };
@@ -157,7 +157,7 @@ var valObject = {
                 },
                 {
                     type   : 'imageSize',
-                    prompt : 'Image must not be more than 5kb'
+                    prompt : 'Image must not less than 20kb'
                 },
                 {
                     type   : 'imageChecker',
