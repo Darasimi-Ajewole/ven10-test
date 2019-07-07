@@ -1,4 +1,4 @@
-from django.shortcuts import redirect 
+from django.shortcuts import redirect,render
 from rest_framework import status
 from rest_framework.decorators import api_view 
 from rest_framework.response import Response
@@ -8,14 +8,7 @@ from django.conf import settings
 from os.path import join
 
 def home(request):
-    return redirect('/static/add.html')
-    
-#Product List API
-@api_view(['GET'])
-def product_list(request):
-	prodList = Product.objects.all()
-	serializer = ProdSerializer(prodList,many=True)
-	return Response(serializer.data)
+    return render(request,"onlineProducts/index.html")
 
 #Product detail api
 @api_view(['GET'])
