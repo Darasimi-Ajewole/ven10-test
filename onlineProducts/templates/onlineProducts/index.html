@@ -9,13 +9,33 @@
     </head>
     
     <body>
-        <div class="ui two column centered grid" enctype="multipart/form-data">
-                
+        <!--Product Display Modal-->
+        <div id="detail" class="ui card modal">
+                <i class="close icon"></i>
+                    <div class="image">
+                        <img/>
+                    </div>
+                    <div class="content">
+                        <a class="header"></a>
+                        <div class="meta">
+                            <span></span>
+                        </div>
+                        <div class="description">
+                        </div>
+                    </div>
+                    <div class="extra content">
+                            <a>
+                                <i class="dollar sign icon"></i>
+                            </a>
+                    </div>
+        </div>
+        <div class="ui two column centered grid">
+          
                 <div class="column main">
                     <h1 class="ui dividing header">
                             Add a new Product to your store
                     </h1>
-                    <form class="ui form">
+                    <form class="ui form" enctype="multipart/form-data">
                         <div class="field">
                                 <label for="name">
                                         Product Name
@@ -62,46 +82,14 @@
                                         <input type="color" name="color">
                                 </label><br>
                         </div>
-
-                        
-                        
                         <button class="ui primary button" type="submit">Submit</button>
                         <div class="ui error message"></div>
                     </form> 
                 </div>
         </div>
         
-        <div class="message"></div>
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src="static/onlineProducts/scripts/index.js"></script>
     </body>
 </html>
-
-
-<!--
-    <!DOCTYPE html>
-
-<html>
-    <head>
-        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-        <title>Product Detail</title>
-    </head>
-    <body>
-        <h1>
-            Product Detail
-        </h1>
-        
-        <div id="detail">
-            
-        </div>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-        <script src= "scripts/detail.js?v=2"></script>
-     
-    </body>
-</html>
-
--->
