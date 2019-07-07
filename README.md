@@ -8,27 +8,34 @@ See it live [here](https://vast-plateau-57728.herokuapp.com)
 
 # Getting Started
 1. Clone the repository
-2. `$ cd <project directory>`
-3. `$ python manage.py runserver`
-4. Kindly wait a few seconds for development server to start successfully.
-5. Connect to the internet.
-6. Open your browser(chrome preferably) and navigate to `http://127.0.0.1:8000/add`
-7. If you experience any issue,check out the prerequisites
+    
+    `$ git clone git@github.com:Darasimi-Ajewole/ven10-test.git`
+2. Change present working directory to project directory
+    
+    `$ cd <project directory>`
 
-# Prerequisites
+# Requirements
 1. Follow the instructions [here](https://pillow.readthedocs.io/en/stable/installation.html) to install Pillow dependencies 
 
-2. `$ cd <project directory>`
+2. Install python packages
+    
+    `$ pip install -r requirements.txt`
 
-3. `$ pip install -r requirements.txt`
+# Installing
+
+1. Run django migrations
+    
+    `$ python3 manage.py migrate`
+
+2. Start development server
+
+    `$ python3 manage.py runserver`
+3. Kindly wait a few seconds for development server to start successfully.
+4. Connect to the internet.
+5. Open your browser(chrome preferably) and navigate to `http://127.0.0.1:8000`
 
 # Running Tests
-
-1. `$ cd <project directory>`
-
-2. `$ python manage.py test`
+ `$ python manage.py test`
 
 # Built With
-
 * Python 3.7
-* Android 6.3
