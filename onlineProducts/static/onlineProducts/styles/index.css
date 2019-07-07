@@ -8,6 +8,10 @@ div.column.main {
     padding: 5% !important; 
 }
 
+#detail {
+    width:20em;
+}
+
 .image-upload-wrap {
     border: 4px dashed #d4d4d5 ;
     position: relative;
