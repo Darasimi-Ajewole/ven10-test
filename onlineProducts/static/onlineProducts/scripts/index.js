@@ -6,6 +6,7 @@ function submit(event) {
     if(!( productForm.form('is valid'))) {
         return
     }
+    productForm.attr('class','ui loading form')
     var FD = new FormData(productForm[0]);
     $.ajax({
         type: 'POST',
@@ -18,16 +19,37 @@ function submit(event) {
     })
     .done(afterSubmission)
     .fail((xhr,status,errorThrown)=> {failed(xhr,status,errorThrown,event)})
-    /*
-    message.textContent = "Adding New product...";
-    productForm.form('reset');*/
+}
+
+function updateModal(response) {
+    var prodName = $('.card .header');
+    var prodDesc = $('.card .description');
+    var prodCat = $('.card .meta span');
+    var prodPrice = $('.card .extra.content i');
+    var prodColor = $('.card');
+    
+    prodName.text(response.name)
+    prodDesc.text(response.description)
+    prodCat.text(response.category)
+    prodPrice.text(response.price)
+    prodColor.css('background-color',response.color)
+
+    var prodImg = $('.card img')
+    var reader = new FileReader();
+    reader.onload = (event) => {
+        prodImg.attr('src',event.target.result);
+        productForm.form('reset');
+    }
+    reader.readAsDataURL(fileInput[0].files[0])
 }
 
 //handles redirection submission 
 function afterSubmission(response) {
-    console.log(response);
-    //work on after submission
-    
+    updateModal(response);
+    var fileWrapper = $('.image-upload-wrap')
+    fileWrapper.css('opacity','1')    
+    productForm.attr('class','ui form');
+    $('.ui.modal').modal('show');
 }
 
 //handles error from form submission
@@ -42,18 +64,33 @@ function fileUpdate(event) {
 }
 
 $.fn.form.settings.rules.imageSize = function(value) {
-    var size = fileInput[0].files[0].size
-    return size <= 2000;
+    if (fileInput[0].files.length) {
+        var size = fileInput[0].files[0].size
+        return size <= 2000;
+    }
+    return false;
 };
 
 $.fn.form.settings.rules.imageChecker = function(value) {
-    var type = fileInput[0].files[0].type
-    var validImageTypes = ["image/gif", "image/jpeg", "image/png"];
-    return $.inArray(type, validImageTypes) !== -1;
+    if (fileInput[0].files.length) {
+        var type = fileInput[0].files[0].type
+        var validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+        return $.inArray(type, validImageTypes) !== -1;
+    }
+    return false;
+    
 };
+
+function switchFileInput () {
+    if($('.ui.form').form('is valid', 'image'))  {
+        var fileWrapper = $('.image-upload-wrap')
+        fileWrapper.css('opacity','0.2')    
+    }
+}
 
 var productForm = $("form");
 var fileInput = $('#pic');
+fileInput.on('change',switchFileInput)
 var dropContainer = $('.image-upload-wrap');
 
 productForm.on("submit", submit);
@@ -69,6 +106,10 @@ var valObject = {
               {
                 type   : 'empty',
                 prompt : 'Please enter Product name'
+              },
+              {
+                type   : 'maxLength[12]',
+                prompt : 'Product name must be less than 12 characters'
               }
             ]
           },
@@ -100,7 +141,11 @@ var valObject = {
                 {
                     type   : 'empty',
                     prompt : 'Please enter Product Category'
-                  }
+                },
+                {
+                    type   : 'maxLength[12]',
+                    prompt : 'Product Category must be less than 12 characters'
+                },
             ]
         },
         image: {
@@ -116,7 +161,7 @@ var valObject = {
                 },
                 {
                     type   : 'imageChecker',
-                    prompt : 'Must be an image'
+                    prompt : 'Product Image must be a standard image format'
                 }
             ]
         },
@@ -124,60 +169,3 @@ var valObject = {
   }
 
 productForm.form(valObject)
-
-/* 
-//retrieves product ID parameter from url
-
-function extractID() {
-    const urlString = window.location.href;
-    var url = new URL(urlString);
-    var id = url.searchParams. get ("id");
-    return id
-}
-//queries the Product Detail api which respond with all properties of a product
-function queryApi(id) {
-    //url of  Product Detail
-    const apiURL = currentURL.origin + `/products/${id}`;
-    axios.get(apiURL).then((data) => populate(data));
-}
-
-// populates the front end with response from querying Product Detail api
-function populate(data) {
-    
-    var obj = data.data;
-    var detail = document.querySelector("#detail");
-    
-    var heading = document.createElement("h3");
-    var pricePara = document.createElement("p");
-    var descriptionPara = document.createElement("p");
-    var categoryPara = document.createElement("p");
-    var descriptionPara = document.createElement("p");
-    var image  = document.createElement("img");
-    var color= obj.color;
-        
-    heading.textContent = obj.name;
-    pricePara.textContent = "Price:  " + "$" + obj.price ;
-    categoryPara.textContent = "Category:  "  + obj.category;
-    descriptionPara.textContent = "Description:  " + obj.description;
-    
-    var imageURL = currentURL.origin + obj.image;
-    image.setAttribute("src",imageURL);
-    
-    detail.append(heading,pricePara,categoryPara, descriptionPara,image)
-    
-    body = document.querySelector("body");
-    body.style.backgroundColor = color;
-    
-    }
-
-//script entry point
-function start() {
-    var id = extractID();
-    queryApi(id);
-    }
-
-var currentURL = new URL(window.location.href);
-
-start();
-
-*/
