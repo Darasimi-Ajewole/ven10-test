@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <title>Add new product</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" rel="stylesheet">
+        <link href="static/onlineProducts/styles/index.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="ui two column centered grid" enctype="multipart/form-data">
+                
+                <div class="column main">
+                    <h1 class="ui dividing header">
+                            Add a new Product to your store
+                    </h1>
+                    <form class="ui form">
+                        <div class="field">
+                                <label for="name">
+                                        Product Name
+                                        <input type="text" name="name">
+                                </label>
+                        </div>
+
+                        <div class="field">
+                                <label for="price">
+                                        Product Price
+                                        <input type="number" name="price" step="0.01">
+                                </label>
+                        </div>
+
+                        <div class="field">
+                                <label for="description">
+                                        Product Description
+                                        <textarea name="description"></textarea>
+                                </label>
+                        </div>
+
+                        <div class="field">
+                                <label for="category">
+                                        Product Category
+                                        <input type="text" name="category">
+                                </label>
+                        </div>
+                        
+                        <div class="field">
+                                <label for="image">
+                                        Product Image
+                                </label>
+                                <div class="image-upload-wrap">
+                                    <input type="file" name="image" accept="image/*"  id="pic">
+                                    <div class="drag-text">
+                                            <h3>Drag and drop an image or Click to Upload</h3>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="field">
+                                <label for="color">
+                                        Display Color:
+                                        <input type="color" name="color">
+                                </label><br>
+                        </div>
+
+                        
+                        
+                        <button class="ui primary button" type="submit">Submit</button>
+                        <div class="ui error message"></div>
+                    </form> 
+                </div>
+        </div>
+        
+        <div class="message"></div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src="static/onlineProducts/scripts/index.js"></script>
+    </body>
+</html>
