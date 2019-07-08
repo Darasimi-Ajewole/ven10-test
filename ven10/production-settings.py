@@ -137,7 +137,7 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR,"media","images",)
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = config('API_HOSTS', cast=lambda v: [s for s in v.split(',')])
 
 
 CORS_ALLOW_HEADERS = (
