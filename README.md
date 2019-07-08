@@ -1,8 +1,11 @@
-# ven10-store
-A simple online store created using django and vanilla JS at the front end. The back end API include:
->* **Product list api** - responds with list of all products.
->* **Product detail api** - responds with all properties of a product.
+# ven10
+A demo of a django REST api being consumed by a front end application.
+The REST api is built using django rest framework,and the front end application is built using jQuery and semantic-ui. 
+
+The front end application is a single admin page to add products to an ecommerce store.
+The REST api include:
 >* **Product create api** - creates a new product.
+>* **Product detail api** - responds with all properties of a product.
 
 See it live [here](https://vast-plateau-57728.herokuapp.com)
 
