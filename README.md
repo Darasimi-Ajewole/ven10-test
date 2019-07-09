@@ -24,6 +24,8 @@ See it live [here](https://vast-plateau-57728.herokuapp.com)
     
     `$ pip install -r requirements.txt`
 
+    > Note: Highly recommended to create a virtual environment before installing python packages. Click this [link](https://www.geeksforgeeks.org/python-virtual-environment/) to get started.
+
 # Installing
 
 1. Run django migrations
