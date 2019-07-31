@@ -107,3 +107,7 @@ venv.bak/
 *.jpg
 *.png
 *.jpeg
+
+# vs code settings
+.vscode
+*.code-workspace
